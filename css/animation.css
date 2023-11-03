@@ -1,39 +1,35 @@
-
-
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-    
-html::-webkit-scrollbar {
-width: 1vw;
 
+html::-webkit-scrollbar {
+  width: 1vw;
 }
 html::-webkit-scrollbar-thumb {
-background-color: #141624;
-border: 0;
-border-radius: 20px;
+  background-color: #141624;
+  border: 0;
+  border-radius: 20px;
 }
 /* html::-webkit-scrollbar-thumb:hover {
 background-color: #777;
 } */
 html::-webkit-scrollbar-track {
-background-color: #23263a;
+  background-color: #23263a;
 }
 /* html::-webkit-scrollbar-track:hover {
 background-color: #555;
 } */
 body {
-background-color: #23263a;
-color: #CCC;
+  background-color: #23263a;
+  color: #ccc;
 }
 
-
-.icons img{
-    transition: all 0.5s ease ;
-    /* animation: roll 1s forwards; */
+.icons img {
+  transition: all 0.5s ease;
+  /* animation: roll 1s forwards; */
 }
-.icons img:hover{
-        transform: rotateY(180deg) scale(1.2) ;        
+.icons img:hover {
+  transform: rotateY(180deg) scale(1.2);
 }
 
 /* @keyframes roll{
@@ -43,11 +39,10 @@ color: #CCC;
     
 } */
 
-#port:hover{
-    transform: translateZ(20px) ;
+#port:hover {
+  transform: translateZ(20px);
 }
 
-
-.card :hover{
-    transform: scale(1.1) ;
+.card :hover {
+  transform: scale(1.1);
 }

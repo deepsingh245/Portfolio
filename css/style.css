@@ -285,7 +285,9 @@ h2 {
   .cards {
     width: 80%;
   }
-}
+
+  } 
+
 
 @media screen and (min-width: 1500px) {
   .cards {
