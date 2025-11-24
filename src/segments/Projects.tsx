@@ -85,7 +85,7 @@ const features: GridLayoutProps["features"] = [
     Icon: GlobeIcon,
     name: "CA Simarjit",
     description:
-      "Beautiful CA Simarjit with location-based forecasts and interactive maps.",
+      "CA Simarjit is a Chartered Accountant firm that provides comprehensive financial services including auditing, taxation, and consultancy to individuals and businesses.",
     tech_stack: ["React", "Three.js", "Next.js", "TypeScript", "Tailwind"],
     liveHref: "https://casimarjit.netlify.app/",
     showButtonText: false,
