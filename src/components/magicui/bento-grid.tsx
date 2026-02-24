@@ -17,11 +17,12 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   background: ReactNode;
   Icon: React.ElementType;
   description: string;
-  tech_stack: string[];
+  techStack: string[];
   // href: string;
   showButtonText: boolean;
   liveHref?: string;
   sourceHref?: string;
+  onClick?: () => void;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -44,7 +45,7 @@ const BentoCard = ({
   background,
   Icon,
   description,
-  tech_stack,
+  techStack,
   showButtonText,
   liveHref,
   sourceHref,
@@ -60,8 +61,10 @@ const BentoCard = ({
         "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
         "transform-gpu dark:bg-background dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
-        className
+        className,
+        props.onClick && "cursor-pointer"
       )}
+      onClick={props.onClick}
       {...props}
     >
       <div>{background}</div>
@@ -73,7 +76,7 @@ const BentoCard = ({
           </h3>
           <p className="max-w-lg text-neutral-400 text-sm">{description}</p>
           <div className="flex gap-1 flex-wrap">
-            {tech_stack.map((skill, index) => (
+            {techStack.map((skill, index) => (
               <Badge
                 key={index}
                 {...(theme === "dark" ? { variant: "default" } : {})}
@@ -96,6 +99,7 @@ const BentoCard = ({
               asChild
               size="sm"
               className="pointer-events-auto p-0"
+              onClick={(e) => e.stopPropagation()}
             >
               <a
                 href={liveHref}
@@ -114,6 +118,7 @@ const BentoCard = ({
               asChild
               size="sm"
               className="pointer-events-auto p-0"
+              onClick={(e) => e.stopPropagation()}
             >
               <a
                 href={sourceHref}
@@ -139,6 +144,7 @@ const BentoCard = ({
             asChild
             size="sm"
             className="pointer-events-auto p-0"
+            onClick={(e) => e.stopPropagation()}
           >
             <a
               href={liveHref}
@@ -156,6 +162,7 @@ const BentoCard = ({
             asChild
             size="sm"
             className="pointer-events-auto p-0"
+            onClick={(e) => e.stopPropagation()}
           >
             <a
               href={sourceHref}

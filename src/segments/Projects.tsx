@@ -17,14 +17,22 @@ const features: GridLayoutProps["features"] = [
     name: "Billety",
     description:
       "Billety is a smart and easy-to-use billing software that helps businesses create invoices, track payments, and manage customers effortlessly across desktop and mobile.",
-    tech_stack: ["React", "Electron", "Capacitor", "Firebase", "TypeScript"],
+    longDescription: "Billety is a comprehensive billing solution designed for modern businesses. It streamlines the invoicing process, allows for real-time payment tracking, and provides a centralized customer management system. Built with cross-platform compatibility in mind, Billety ensures you can manage your business finances from anywhere, on any device.",
+    timeline: "Jan 2024 - Present",
+    techStack: ["React", "Electron", "Capacitor", "Firebase", "TypeScript"],
     sourceHref: "https://github.com/deepsingh245/billety",
     showButtonText: true,
+    images: [dashBoard],
+    downloads: {
+        windows: "https://github.com/deepsingh245/billety/releases/download/v1.0.0/Billety-Setup-1.0.0.exe",
+        mac: "https://github.com/deepsingh245/billety/releases/download/v1.0.0/Billety-1.0.0.dmg",
+        android: "https://play.google.com/store/apps/details?id=com.billety.app"
+    },
     background: (
       <img
         src={dashBoard}
-        alt="3D Portfolio"
-        className="absolute  opacity-60 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)]"
+        alt="Billety Dashboard"
+        className="absolute opacity-60 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
     className: "lg:row-start-4 lg:row-end-3 lg:col-start-2 lg:col-end-4",
@@ -34,9 +42,12 @@ const features: GridLayoutProps["features"] = [
     name: "Client Trace - NPM",
     description:
       "NPM package for tracking clients IP addresses and user agents.",
-    tech_stack: ["Javascript"],
+    longDescription: "Client Trace is a lightweight yet powerful NPM package designed to help developers easily track and identify client IP addresses and user agent strings. It simplifies the process of gathering analytics and security data for your Node.js applications.",
+    timeline: "Dec 2023",
+    techStack: ["Javascript", "Node.js", "NPM"],
     liveHref: "https://npmjs.com/package/client-trace",
     showButtonText: true,
+    images: [npmImage],
     background: (
       <Marquee
         pauseOnHover
@@ -68,15 +79,18 @@ const features: GridLayoutProps["features"] = [
     name: "Welcome Enterprise",
     description:
       "Welcome Enterprise is a leading manufacturer of high-quality machines designed to simplify and enhance your culinary experience.",
-    tech_stack: ["HTML", "CSS", "JavaScript", "TailwindCSS", "Firebase"],
+    longDescription: "Welcome Enterprise showcases a catalog of high-quality culinary machines. The website features a modern, responsive design that highlights product details and specifications, making it easy for potential clients to browse and inquire about products.",
+    timeline: "Nov 2023",
+    techStack: ["HTML", "CSS", "JavaScript", "TailwindCSS", "Firebase"],
     liveHref: "https://welcomeenterprise.netlify.app/",
     sourceHref: "https://github.com/deepsingh245/welcome-enterprise",
     showButtonText: false,
+    images: [welcomeEnter],
     background: (
       <img
         src={welcomeEnter}
         alt="Welcome Enterprise"
-        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] "
+        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
@@ -85,15 +99,18 @@ const features: GridLayoutProps["features"] = [
     Icon: GlobeIcon,
     name: "CA Simarjit",
     description:
-      "CA Simarjit is a Chartered Accountant firm that provides comprehensive financial services including auditing, taxation, and consultancy to individuals and businesses.",
-    tech_stack: ["React", "Three.js", "Next.js", "TypeScript", "Tailwind"],
+      "CA Simarjit is a Chartered Accountant firm that provides comprehensive financial services including auditing, taxation, and consultancy.",
+    longDescription: "This professional website for CA Simarjit allows clients to explore financial services, book consultations, and access important financial resources. It features a clean, professional design suitable for a financial services firm.",
+    timeline: "Oct 2023",
+    techStack: ["React", "Three.js", "Next.js", "TypeScript", "Tailwind"],
     liveHref: "https://casimarjit.netlify.app/",
     showButtonText: false,
+    images: [caSimarjit],
     background: (
       <img
         src={caSimarjit}
         alt="CA Simarjit"
-        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] "
+        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-3",
@@ -103,9 +120,12 @@ const features: GridLayoutProps["features"] = [
     name: "Attendify: Smart Attendance System",
     description:
       "A smart attendance system using face recognition to automatically identify students and mark attendance.",
-    tech_stack: ["React", "Face Api", "FireBase", "NodeJS"],
+    longDescription: "Attendify revolutionizes classroom attendance by using advanced face recognition technology. It eliminates manual roll calls, saving time and reducing errors. The system includes a dashboard for teachers to view attendance reports and trends.",
+    timeline: "Sep 2023",
+    techStack: ["React", "Face Api", "FireBase", "NodeJS"],
     sourceHref: "https://github.com/deepsingh245/attendify",
     showButtonText: true,
+    images: [attendifyDashBoard],
     background: (
       <Marquee
         pauseOnHover
