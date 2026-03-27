@@ -55,11 +55,11 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                  animate={{ opacity: 1, x: 0 }}
                  transition={{ delay: 0.15 }}
             >
-                <h2 className="text-xl md:text-2xl font-bold tracking-tighter text-foreground michroma uppercase">
+                <h2 className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground inter uppercase">
                 {project.name}
                 </h2>
                 {project.timeline && (
-                    <p className="text-[10px] text-muted-foreground font-mono uppercase tracking-widest mt-0.5">
+                    <p className="text-[10px] text-muted-foreground inter font-semibold uppercase tracking-widest mt-0.5">
                         {project.timeline}
                     </p>
                 )}
@@ -78,7 +78,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                 transition={{ delay: 0.2 }}
                 className="space-y-2.5"
             >
-                <h4 className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                <h4 className="flex items-center gap-2 text-[10px] inter font-bold uppercase tracking-widest text-muted-foreground">
                     <Layers className="w-3 h-3" /> Stack
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
@@ -102,7 +102,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                     transition={{ delay: 0.3 }}
                     className="space-y-2.5"
                  >
-                    <h4 className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                    <h4 className="flex items-center gap-2 text-[10px] inter font-bold uppercase tracking-widest text-muted-foreground">
                         <ExternalLink className="w-3 h-3" /> Source
                     </h4>
                     <div className="grid grid-cols-1 gap-2">
@@ -140,7 +140,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                     transition={{ delay: 0.4 }}
                     className="space-y-2.5 pt-4 border-t border-dashed border-border"
                  >
-                     <h4 className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                     <h4 className="flex items-center gap-2 text-[10px] inter font-bold uppercase tracking-widest text-muted-foreground">
                         Downloads
                     </h4>
                     <div className="grid grid-cols-2 gap-2">
@@ -226,7 +226,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                     transition={{ delay: 0.3 }}
                     className="max-w-none text-foreground"
                 >
-                    <h3 className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4 border-b border-border pb-2 inline-block">Overview</h3>
+                    <h3 className="text-xs inter font-bold uppercase tracking-widest text-muted-foreground mb-4 border-b border-border pb-2 inline-block">Overview</h3>
                     <div className="text-muted-foreground text-sm leading-relaxed text-justify inter">
                         {project.longDescription || project.description}
                     </div>

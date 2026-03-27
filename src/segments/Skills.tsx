@@ -9,6 +9,7 @@ const Skills = () => {
     "React",
     "Angular",
     "Next.js",
+    "React Native",
     "Tailwind",
     "TypeScript",
     "Node.js",
@@ -18,6 +19,8 @@ const Skills = () => {
     "MySQL",
     "Git",
     "Figma",
+    "GCP",
+    "Ionic"
   ];
   return (
     <Card className="flex flex-col items-start gap-4 border-x-0 border-t-0 p-6 borer-b-2">
