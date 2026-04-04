@@ -117,7 +117,7 @@ const Skills = () => {
             transition={{ duration: 0.3 }}
             className="w-full"
           >
-            <TextAnimate animation="blurInUp" by="character" once>
+            <TextAnimate animation="blurInUp" by="character" as="div" once>
               {allSkills.map((skill, index) => (
                 <Badge
                   key={index}

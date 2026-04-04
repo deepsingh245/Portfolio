@@ -49,8 +49,9 @@ const BentoCard = ({
   showButtonText,
   liveHref,
   sourceHref,
+  longDescription,
   ...props
-}: BentoCardProps) => {
+}: BentoCardProps & { longDescription?: string }) => {
   const { theme } = useTheme();
   return (
     <div
