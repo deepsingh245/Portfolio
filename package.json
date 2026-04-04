@@ -36,7 +36,8 @@
     "react-router-dom": "^7.6.0",
     "rough-notation": "^0.5.1",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tech-stack-icons": "^3.7.1"
   },
   "devDependencies": {
     "@types/node": "^22.18.1",

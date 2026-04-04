@@ -161,7 +161,7 @@ const features: GridLayoutProps["features"] = [
 const Projects = () => {
   return (
     <Card className="flex flex-col items-start gap-4 border-x-0 border-t-0 p-6 border-b-2">
-      <p className="font-extrabold">Projects</p>
+      <p className="font-extrabold">Personal Projects</p>
       <GridLayout features={features} />
     </Card>
   );

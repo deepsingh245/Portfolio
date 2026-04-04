@@ -96,7 +96,11 @@ const DockLayout: React.FC = () => {
                     aria-label={social.name}
                     target="_blank"
                     rel="noopener noreferrer"
-                    download={social.download ? "Simrandeep_Singh_Resume.pdf" : undefined}
+                    download={
+                      "download" in social && social.download 
+                        ? "Simrandeep_Singh_Resume.pdf" 
+                        : undefined
+                    }
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-full rounded-full"
