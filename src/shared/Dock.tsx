@@ -1,10 +1,11 @@
 "use client";
 
-import { HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { FileDown, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 import React from "react";
 
 import GitHubIcon from "@/assets/icons/GithubIcon";
 import LinkedInIcon from "@/assets/icons/LinkedInIcon";
+import XIcon from "@/assets/icons/XIcon";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -35,10 +36,21 @@ const DATA = {
         url: "https://www.linkedin.com/in/simrandeep-singh-7bb74b234/",
         icon: LinkedInIcon,
       },
+      X: {
+        name: "X",
+        url: "https://x.com/DevSimrandeep",
+        icon: XIcon,
+      },
       Email: {
         name: "Send Email",
         url: "mailto:deepsingh245@gmail.com",
         icon: MailIcon,
+      },
+      Resume: {
+        name: "Download Resume",
+        url: "/assets/Simrandeep_Singh_Resume.pdf",
+        icon: FileDown,
+        download: true,
       },
     },
   },
@@ -84,6 +96,7 @@ const DockLayout: React.FC = () => {
                     aria-label={social.name}
                     target="_blank"
                     rel="noopener noreferrer"
+                    download={social.download ? "Simrandeep_Singh_Resume.pdf" : undefined}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-full rounded-full"

@@ -1,7 +1,6 @@
 import NPMIcon from "@/assets/icons/NPMIcon";
 import attendifyDashBoard from "@/assets/images/attendify-dashboard.png";
 import dashBoard from "@/assets/images/billety-dashboard.png";
-import caSimarjit from "@/assets/images/ca-simarjit.png";
 import npmImage from "@/assets/images/npm-image.png";
 import cssGridPlaygroundImg from "@/assets/images/css-playground.png";
 import linkedLoom from "@/assets/images/linkedloom.png";
@@ -34,7 +33,7 @@ const features: GridLayoutProps["features"] = [
       <img
         src={dashBoard}
         alt="Billety Dashboard"
-        className="absolute opacity-60 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
+        className="absolute opacity-80 dark:opacity-40 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
     className: "lg:row-start-4 lg:row-end-5 lg:col-start-2 lg:col-end-4",
@@ -45,7 +44,7 @@ const features: GridLayoutProps["features"] = [
     description:
       "NPM package for tracking clients IP addresses and user agents.",
     longDescription: "Client Trace is a lightweight yet powerful NPM package designed to help developers easily track and identify client IP addresses and user agent strings. It simplifies the process of gathering analytics and security data for your Node.js applications.",
-    timeline: "Dec 2023",
+    timeline: "Dec 2024",
     techStack: ["Javascript", "Node.js", "NPM"],
     liveHref: "https://npmjs.com/package/client-trace",
     showButtonText: true,
@@ -53,22 +52,22 @@ const features: GridLayoutProps["features"] = [
     background: (
       <Marquee
         pauseOnHover
-        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] "
+        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] "
       >
         {[1, 2, 3, 4].map((f, idx) => (
           <figure
             key={idx}
             className={cn(
-              "relative w-62 h-64 cursor-pointer overflow-hidden rounded-xl border",
+              "relative w-102 h-64 cursor-pointer overflow-hidden rounded-xl border",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
+              "transform-gpu transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <img
               src={npmImage}
               alt="NPM"
-              className=" h-full w-auto object-fill transition-all duration-500 ease-in-out dark:opacity-60 hover:opacity-100 hover:blur-none"
+              className=" h-full w-auto object-fill transition-all duration-500 ease-in-out opacity-80 dark:opacity-40 hover:opacity-100"
             />
           </figure>
         ))}
@@ -82,7 +81,7 @@ const features: GridLayoutProps["features"] = [
     description:
       "Interactive CSS Grid Playground where you can build grids by clicking buttons and see changes instantly.",
     longDescription: "A simple, interactive CSS Grid Playground where you can build grids by clicking buttons and see changes instantly. Customize rows, columns, and gaps, then export the clean CSS code with one click.",
-    timeline: "Nov 2023",
+    timeline: "Nov 2025",
     techStack: ["HTML", "CSS", "JavaScript"],
     liveHref: "https://css-grid-playround.netlify.app/",
     sourceHref: "https://github.com/deepsingh245/css-grid-playground",
@@ -92,7 +91,7 @@ const features: GridLayoutProps["features"] = [
       <img
         src={cssGridPlaygroundImg}
         alt="CSSGrid Playground"
-        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
+        className="absolute opacity-80 dark:opacity-40 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-4 lg:row-end-5",
@@ -110,11 +109,6 @@ const features: GridLayoutProps["features"] = [
     showButtonText: true,
     images: [linkedLoom],
     background: (
-      // <img
-      //   src={linkedLoom}
-      //   alt="LinkedLoom"
-      //   className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
-      // />
       <Marquee
         pauseOnHover
         reverse
@@ -127,19 +121,18 @@ const features: GridLayoutProps["features"] = [
               "relative w-100 h-62 cursor-pointer overflow-hidden rounded-xl border ",
               "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.01]",
               "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
+              "transform-gpu transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <img
               src={f}
               alt="LinkedLoom"
-              className=" h-full w-auto object-fill transition-all duration-500 ease-in-out dark:opacity-60  hover:opacity-100 hover:blur-none"
+              className=" h-full w-auto object-fill transition-all duration-500 ease-in-out opacity-80 dark:opacity-40 hover:opacity-100"
             />
           </figure>
         ))}
       </Marquee>
     ),
-    // className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-3",
     className: "lg:col-start-1 lg:col-end-4 lg:row-start-5 lg:row-end-6",
   },
   {
@@ -155,36 +148,12 @@ const features: GridLayoutProps["features"] = [
     showButtonText: true,
     images: [attendifyDashBoard],
     background: (
-      // <Marquee
-      //   pauseOnHover
-      //   reverse
-      //   className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] "
-      // >
-      //   {[attendifyDashBoard, attendifyDashBoard].map((f, idx) => (
-      //     <figure
-      //       key={idx}
-      //       className={cn(
-      //         "relative w-100 h-62 cursor-pointer overflow-hidden rounded-xl border ",
-      //         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.01]",
-      //         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      //         "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
-      //       )}
-      //     >
-      //       <img
-      //         src={f}
-      //         alt="Attendify"
-      //         className=" h-full w-auto object-fill transition-all duration-500 ease-in-out dark:opacity-60  hover:opacity-100 hover:blur-none"
-      //       />
-      //     </figure>
-      //   ))}
-      // </Marquee>
       <img
         src={attendifyDashBoard}
         alt="Attendify"
-        className="absolute [--duration:20s] [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
+        className="absolute opacity-80 dark:opacity-40 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
       />
     ),
-    // className: "lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:row-end-4",
     className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-4",
   },
 ];

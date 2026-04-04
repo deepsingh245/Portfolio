@@ -4,6 +4,7 @@ import About from "./segments/About";
 import Contact from "./segments/Contact";
 import Header from "./segments/Header";
 import Experience from "./segments/Experience";
+import Achievements from "./segments/Achievements";
 import Projects from "./segments/Projects";
 import Skills from "./segments/Skills";
 import DockLayout from "./shared/Dock";
@@ -18,6 +19,7 @@ const Home = () => {
         <About />
         <Skills />
         <Experience />
+        <Achievements />
         <Projects />
         <Contact />
       </div>

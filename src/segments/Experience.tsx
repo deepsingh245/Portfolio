@@ -9,7 +9,7 @@ const experiences = [
     company: "Unthinkable Solutions",
     period: "2024 - Present",
     description: "Developing scalable web applications using React, Next.js, and Node.js. Focused on performance optimization and modern UI architecture.",
-    skills: ["React", "Next.js", "Node.js", "TypeScript"]
+    skills: ["React", "Angular", "Next.js", "Node.js", "TypeScript"]
   },
   {
     role: "Web Developer",
