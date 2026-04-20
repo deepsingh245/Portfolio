@@ -32,7 +32,11 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="p-0 overflow-hidden bg-background/95 backdrop-blur-xl border border-border shadow-2xl max-w-5xl">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      className="p-0 overflow-hidden bg-background/95 backdrop-blur-md border border-border shadow-[var(--elevated-shadow)] max-w-5xl"
+    >
       {/* Header - Reduced Height, No BG image */}
       <div className="relative h-24 md:h-28 w-full overflow-hidden border-b border-border bg-secondary/20">
          <div className="absolute inset-0 bg-grid-black/[0.05] dark:bg-grid-white/[0.02] [mask-image:linear-gradient(to_bottom,transparent,black)]" />

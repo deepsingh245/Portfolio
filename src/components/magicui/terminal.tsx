@@ -2,15 +2,22 @@ import { AnimatedSpan, Terminal, TypingAnimation } from "../ui/terminal";
 
 export function TerminalBox({ data }: { data: { text: string; delay: number }[] }) {
   return (
-    <Terminal className="bg-[#030303] text-white border-white/5 shadow-2xl h-full w-full">
+    <Terminal
+      sequence={false}
+      startOnView={false}
+      className="h-full w-full border-[color:var(--terminal-border)] bg-[color:var(--terminal-bg)] text-[color:var(--terminal-text)] shadow-[var(--elevated-shadow)]"
+    >
       {data.map((item, index) => {
         const isCommand = item.text.startsWith("$");
         const isSuccess = item.text.includes("drwxr-xr-x") && !item.text.includes("boring");
+        const lineDelay = item.delay + index * 120;
         
         if (isCommand) {
           return (
-            <AnimatedSpan key={index} className="text-primary font-bold">
-              <TypingAnimation delay={item.delay}>{item.text}</TypingAnimation>
+            <AnimatedSpan key={index} delay={lineDelay} className="font-bold text-primary">
+              <TypingAnimation delay={lineDelay} startOnView={false}>
+                {item.text}
+              </TypingAnimation>
             </AnimatedSpan>
           );
         }
@@ -18,14 +25,19 @@ export function TerminalBox({ data }: { data: { text: string; delay: number }[] 
         return (
           <AnimatedSpan 
             key={index} 
-            className={isSuccess ? "text-green-400" : "text-muted-foreground"}
+            delay={lineDelay}
+            className={
+              isSuccess
+                ? "text-[color:var(--terminal-success)]"
+                : "text-[color:var(--terminal-muted)]"
+            }
           >
             <span>{item.text}</span>
           </AnimatedSpan>
         );
       })}
 
-      <AnimatedSpan className="text-primary animate-pulse">
+      <AnimatedSpan delay={data.length * 180} className="text-primary animate-pulse">
         <span>_</span>
       </AnimatedSpan>
     </Terminal>

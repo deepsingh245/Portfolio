@@ -14,6 +14,8 @@ interface ModalProps {
 
 export const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const scrollYRef = useRef(0);
+  const isBodyLockedRef = useRef(false);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -22,16 +24,41 @@ export const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
       }
     };
 
-    if (isOpen) {
+    const lockBodyScroll = () => {
+      if (isBodyLockedRef.current) return;
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
+      isBodyLockedRef.current = true;
+    };
+
+    const unlockBodyScroll = () => {
+      if (!isBodyLockedRef.current) return;
+      const lockedScrollY = scrollYRef.current;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      isBodyLockedRef.current = false;
+      window.scrollTo({ top: lockedScrollY, behavior: "auto" });
+    };
+
+    if (isOpen) {
+      lockBodyScroll();
       document.addEventListener("keydown", handleKeyDown);
     } else {
-      document.body.style.overflow = "unset";
+      unlockBodyScroll();
       document.removeEventListener("keydown", handleKeyDown);
     }
 
     return () => {
-      document.body.style.overflow = "unset";
+      unlockBodyScroll();
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -47,7 +74,7 @@ export const Modal = ({ isOpen, onClose, children, className }: ModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-slate-950/20 backdrop-blur-md dark:bg-black/35"
             onClick={onClose}
           />
           <motion.div
