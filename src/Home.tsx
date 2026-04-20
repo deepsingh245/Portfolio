@@ -1,4 +1,5 @@
 import { AnimatedThemeToggler } from "@/components/magicui/animated-theme-toggler";
+import PortfolioChatbot from "@/components/chat/PortfolioChatbot";
 import { Meteors } from "./components/magicui/meteors";
 import About from "./segments/About";
 import Contact from "./segments/Contact";
@@ -23,6 +24,7 @@ const Home = () => {
         <Projects />
         <Contact />
       </div>
+      <PortfolioChatbot />
       <DockLayout />
     </div>
   );
