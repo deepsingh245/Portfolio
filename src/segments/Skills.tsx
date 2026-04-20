@@ -37,7 +37,7 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[...Array(emptyStars)].map((_, i) => (
         <StarIcon
           key={`empty-${i}`}
-          className="w-3.5 h-3.5 text-neutral-700 dark:text-neutral-800"
+          className="w-3.5 h-3.5 text-[color:var(--border)]"
         />
       ))}
     </div>
@@ -108,9 +108,9 @@ const Skills = () => {
               {skillCategories.map((category) => (
                 <Card
                   key={category.title}
-                  className="p-4 bg-neutral-100/50 dark:bg-neutral-900/50 border-neutral-200 dark:border-neutral-800 rounded-xl relative overflow-hidden group/card"
+                  className="p-4 rounded-xl relative overflow-hidden group/card border-[color:var(--border)] bg-[color:var(--surface-1)] shadow-[var(--elevated-shadow)]"
                 >
-                  <h4 className="text-xs font-bold tracking-widest text-neutral-500 dark:text-neutral-400 mb-4 px-2 uppercase">
+                  <h4 className="text-xs font-bold tracking-widest text-muted-foreground mb-4 px-2 uppercase">
                     {category.title}
                   </h4>
 
@@ -118,7 +118,7 @@ const Skills = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center justify-between p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800/50 rounded-lg transition-colors group cursor-default"
+                        className="flex items-center justify-between p-2 rounded-lg transition-colors group cursor-default hover:bg-[color:var(--surface-hover)]"
                       >
                         <div className="flex items-center gap-3">
                           <Icon
@@ -126,7 +126,7 @@ const Skills = () => {
                             className="w-5 h-5"
                             variant={theme}
                           />
-                          <span className="text-base font-semibold text-neutral-700 dark:text-neutral-300">
+                          <span className="text-base font-semibold text-foreground">
                             {skill.name}
                           </span>
                           <div className="h-0.5 w-4 bg-primary/30 rounded-full group-hover:w-8 transition-all" />
@@ -135,12 +135,12 @@ const Skills = () => {
                         <div className="flex items-center gap-4">
                           <StarRating rating={skill.rating} />
                           <div className="flex items-center gap-2 text-sm font-mono w-32 justify-end">
-                            <span className="text-neutral-400 dark:text-neutral-500">
+                            <span className="text-muted-foreground">
                               {calculatePercentage(skill.rating)}%
                             </span>
-                            <span className="text-neutral-900 dark:text-neutral-300 font-bold text-base">
+                            <span className="text-foreground font-bold text-base">
                               {skill.rating.toFixed(1)}{" "}
-                              <span className="text-neutral-400 dark:text-neutral-600 text-xs">
+                              <span className="text-muted-foreground text-xs">
                                 / 5
                               </span>
                             </span>

@@ -39,6 +39,15 @@ const projectImages = {
   attendify: attendifyDashBoard,
 } as const;
 
+const marqueeFigureClassName = cn(
+  "relative cursor-pointer overflow-hidden rounded-xl border transform-gpu transition-all duration-300 ease-out hover:blur-none",
+  "border-[color:var(--image-frame)] bg-[color:var(--image-marquee-bg)] hover:bg-[color:var(--image-marquee-hover-bg)]"
+);
+
+const imageBlendStyle = {
+  opacity: "var(--image-overlay-opacity)",
+} as const;
+
 const buildProjectBackground = (project: ProfileProject) => {
   if (project.visual === "client-trace") {
     return (
@@ -49,17 +58,13 @@ const buildProjectBackground = (project: ProfileProject) => {
         {[1, 2, 3, 4].map((_, idx) => (
           <figure
             key={idx}
-            className={cn(
-              "relative w-102 h-64 cursor-pointer overflow-hidden rounded-xl border",
-              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu transition-all duration-300 ease-out hover:blur-none"
-            )}
+            className={cn("w-102 h-64", marqueeFigureClassName)}
           >
             <img
               src={projectImages[project.visual]}
               alt={project.name}
-              className="h-full w-auto object-fill transition-all duration-500 ease-in-out opacity-80 dark:opacity-40 hover:opacity-100"
+              style={imageBlendStyle}
+              className="h-full w-auto object-fill transition-all duration-500 ease-in-out hover:opacity-100"
             />
           </figure>
         ))}
@@ -78,17 +83,13 @@ const buildProjectBackground = (project: ProfileProject) => {
           (image, idx) => (
             <figure
               key={idx}
-              className={cn(
-                "relative w-100 h-62 cursor-pointer overflow-hidden rounded-xl border ",
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.01]",
-                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-                "transform-gpu transition-all duration-300 ease-out hover:blur-none"
-              )}
+              className={cn("w-100 h-62", marqueeFigureClassName)}
             >
               <img
                 src={image}
                 alt={project.name}
-                className="h-full w-auto object-fill transition-all duration-500 ease-in-out opacity-80 dark:opacity-40 hover:opacity-100"
+                style={imageBlendStyle}
+                className="h-full w-auto object-fill transition-all duration-500 ease-in-out hover:opacity-100"
               />
             </figure>
           )
@@ -101,7 +102,8 @@ const buildProjectBackground = (project: ProfileProject) => {
     <img
       src={projectImages[project.visual]}
       alt={project.name}
-      className="absolute opacity-80 dark:opacity-40 [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
+      style={imageBlendStyle}
+      className="absolute [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] object-cover w-full h-full"
     />
   );
 };

@@ -1,19 +1,11 @@
-import { useTheme } from "@/hooks/useTheme";
 import { AnimatedSpan, Terminal, TypingAnimation } from "../ui/terminal";
 
 export function TerminalBox({ data }: { data: { text: string; delay: number }[] }) {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <Terminal
       sequence={false}
       startOnView={false}
-      className={
-        isDark
-          ? "h-full w-full border-white/8 bg-[#050816] text-zinc-100 shadow-2xl"
-          : "h-full w-full border-zinc-200/90 bg-white text-zinc-900 shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-      }
+      className="h-full w-full border-[color:var(--terminal-border)] bg-[color:var(--terminal-bg)] text-[color:var(--terminal-text)] shadow-[var(--elevated-shadow)]"
     >
       {data.map((item, index) => {
         const isCommand = item.text.startsWith("$");
@@ -36,12 +28,8 @@ export function TerminalBox({ data }: { data: { text: string; delay: number }[] 
             delay={lineDelay}
             className={
               isSuccess
-                ? isDark
-                  ? "text-emerald-400"
-                  : "text-emerald-600"
-                : isDark
-                  ? "text-zinc-300"
-                  : "text-zinc-600"
+                ? "text-[color:var(--terminal-success)]"
+                : "text-[color:var(--terminal-muted)]"
             }
           >
             <span>{item.text}</span>
