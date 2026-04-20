@@ -177,7 +177,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <div className="h-[250px]">
+            <div className="h-[250px] overflow-hidden rounded-xl">
               <TerminalBox data={terminalData} />
             </div>
           </div>
