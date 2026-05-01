@@ -146,9 +146,9 @@ export const portfolioKnowledge: ChatbotKnowledge = {
       sourceHref: "https://github.com/deepsingh245/billety",
       downloads: {
         windows:
-          "https://github.com/deepsingh245/billety/releases/download/v1.0.0/Billety-Setup-1.0.0.exe",
-        mac: "https://github.com/deepsingh245/billety/releases/download/v1.0.0/Billety-1.0.0.dmg",
-        android: "https://play.google.com/store/apps/details?id=com.billety.app",
+          "https://github.com/deepsingh245/billety/releases/download/v0.0.1/Billety.Setup.0.0.0.exe",
+        mac: "",
+        android: "",
       },
       visual: "billety",
       icon: "file-text",
