@@ -61,6 +61,7 @@ const buildProjectBackground = (project: ProfileProject) => {
             className={cn("w-102 h-64", marqueeFigureClassName)}
           >
             <img
+              loading="lazy"
               src={projectImages[project.visual]}
               alt={project.name}
               style={imageBlendStyle}
@@ -86,6 +87,7 @@ const buildProjectBackground = (project: ProfileProject) => {
               className={cn("w-100 h-62", marqueeFigureClassName)}
             >
               <img
+                loading="lazy"
                 src={image}
                 alt={project.name}
                 style={imageBlendStyle}
@@ -100,6 +102,7 @@ const buildProjectBackground = (project: ProfileProject) => {
 
   return (
     <img
+      loading="lazy"
       src={projectImages[project.visual]}
       alt={project.name}
       style={imageBlendStyle}

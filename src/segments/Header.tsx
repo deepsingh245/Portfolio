@@ -15,6 +15,7 @@ const Header = () => {
       <Card className="rounded-full border-1 h-26 w-26 p-[2px] border-zinc-700 dark:border-zinc-600">
         <img
           src={theme === "dark" ? deep : deepWhite}
+          loading="lazy"
           alt="deep"
           className="rounded-full"
         />
