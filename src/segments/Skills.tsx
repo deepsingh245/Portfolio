@@ -52,7 +52,7 @@ const Skills = () => {
     <Card className="flex flex-col items-start gap-4 border-x-0 border-t-0 p-6 border-b-2">
       <div className="flex w-full items-center justify-between">
         <p className="font-extrabold text-lg">Skills</p>
-        <Button
+        {/* <Button
           variant="ghost"
           size="sm"
           onClick={() => setShowRatings(!showRatings)}
@@ -66,7 +66,7 @@ const Skills = () => {
           <span className="text-sm font-semibold">
             {showRatings ? "Simple View" : "Detailed View"}
           </span>
-        </Button>
+        </Button> */}
       </div>
 
       <AnimatePresence mode="wait">

@@ -9,6 +9,8 @@ import {
   RefreshCw,
   Sparkles,
   User2,
+  Volume2,
+  VolumeX,
   X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +20,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { portfolioKnowledge } from "@/data/profile";
 import { trimChatHistory } from "@/lib/chatbot";
 import { cn } from "@/lib/utils";
+import { speakText, stopSpeaking } from "@/lib/audio";
+import SpokenText from "./SpokenText";
 import type { ChatMessage, ChatResponseBody } from "@/types/chat";
 
 type DisplayMessage = ChatMessage & {
@@ -35,7 +39,38 @@ const PortfolioChatbot = () => {
   const [suggestedQuestions, setSuggestedQuestions] =
     useState<string[]>(starterQuestions);
   const [lastUserMessage, setLastUserMessage] = useState<string | null>(null);
+  const [currentCharIndex, setCurrentCharIndex] = useState(-1);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [speakingMessageIndex, setSpeakingMessageIndex] = useState<number | null>(null);
+  const [isMuted, setIsMuted] = useState(() => {
+    try {
+      const stored = localStorage.getItem("chatbot-muted");
+      return stored ? JSON.parse(stored) : false;
+    } catch {
+      return false;
+    }
+  });
   const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    return () => {
+      stopSpeaking();
+    };
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("chatbot-muted", JSON.stringify(isMuted));
+    } catch (e) {
+      console.error(e);
+    }
+    if (isMuted) {
+      stopSpeaking();
+      setIsSpeaking(false);
+      setSpeakingMessageIndex(null);
+      setCurrentCharIndex(-1);
+    }
+  }, [isMuted]);
 
   useEffect(() => {
     if (listRef.current) {
@@ -46,6 +81,11 @@ const PortfolioChatbot = () => {
   const sendMessage = async (rawMessage: string) => {
     const content = rawMessage.trim();
     if (!content || isLoading) return;
+
+    stopSpeaking();
+    setIsSpeaking(false);
+    setSpeakingMessageIndex(null);
+    setCurrentCharIndex(-1);
 
     const nextMessages: DisplayMessage[] = [
       ...messages,
@@ -82,14 +122,38 @@ const PortfolioChatbot = () => {
         );
       }
 
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content: payload.reply!,
-          citations: payload.citations,
-        },
-      ]);
+      setMessages((current) => {
+        const newMessages = [
+          ...current,
+          {
+            role: "assistant",
+            content: payload.reply!,
+            citations: payload.citations,
+          },
+        ];
+        
+        // Trigger speech for the new message if not muted
+        if (!isMuted) {
+          const messageIndex = newMessages.length - 1;
+          setSpeakingMessageIndex(messageIndex);
+          setIsSpeaking(true);
+          setCurrentCharIndex(0);
+          
+          speakText(
+            payload.reply!,
+            (event) => {
+              setCurrentCharIndex(event.charIndex);
+            },
+            () => {
+              setIsSpeaking(false);
+              setSpeakingMessageIndex(null);
+              setCurrentCharIndex(-1);
+            }
+          );
+        }
+        
+        return newMessages;
+      });
       setSuggestedQuestions(
         payload.suggestedQuestions?.length
           ? payload.suggestedQuestions
@@ -205,14 +269,35 @@ const PortfolioChatbot = () => {
                         ))}
                     </div> */}
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <X className="w-4 h-4" />
-                  </Button>
+                  <div className="flex items-center gap-1">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full h-8 w-8 hover:bg-primary/10 text-muted-foreground hover:text-foreground"
+                      onClick={() => setIsMuted((prev: boolean) => !prev)}
+                      title={isMuted ? "Unmute AI voice" : "Mute AI voice"}
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-4 h-4" />
+                      ) : (
+                        <Volume2 className="w-4 h-4" />
+                      )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full h-8 w-8"
+                      onClick={() => {
+                        setIsOpen(false);
+                        stopSpeaking();
+                        setIsSpeaking(false);
+                        setSpeakingMessageIndex(null);
+                        setCurrentCharIndex(-1);
+                      }}
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -267,17 +352,65 @@ const PortfolioChatbot = () => {
                             : "bg-muted/40 border-border/70"
                         )}
                       >
-                        <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] opacity-70">
-                          {message.role === "user" ? (
-                            <User2 className="w-3 h-3" />
-                          ) : (
-                            <Bot className="w-3 h-3" />
+                        <div className="mb-2 flex items-center justify-between gap-2 text-[11px] uppercase tracking-[0.2em] opacity-70">
+                          <div className="flex items-center gap-2">
+                            {message.role === "user" ? (
+                              <User2 className="w-3 h-3" />
+                            ) : (
+                              <Bot className="w-3 h-3" />
+                            )}
+                            {message.role}
+                          </div>
+                          {message.role === "assistant" && (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (isSpeaking && speakingMessageIndex === index) {
+                                  stopSpeaking();
+                                  setIsSpeaking(false);
+                                  setSpeakingMessageIndex(null);
+                                  setCurrentCharIndex(-1);
+                                } else {
+                                  stopSpeaking();
+                                  setSpeakingMessageIndex(index);
+                                  setIsSpeaking(true);
+                                  setCurrentCharIndex(0);
+                                  speakText(
+                                    message.content,
+                                    (event) => {
+                                      setCurrentCharIndex(event.charIndex);
+                                    },
+                                    () => {
+                                      setIsSpeaking(false);
+                                      setSpeakingMessageIndex(null);
+                                      setCurrentCharIndex(-1);
+                                    }
+                                  );
+                                }
+                              }}
+                              className="rounded-full p-1 hover:bg-primary/10 transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
+                              title={isSpeaking && speakingMessageIndex === index ? "Stop voice" : "Play voice"}
+                            >
+                              {isSpeaking && speakingMessageIndex === index ? (
+                                <VolumeX className="w-3 h-3" />
+                              ) : (
+                                <Volume2 className="w-3 h-3" />
+                              )}
+                            </button>
                           )}
-                          {message.role}
                         </div>
-                        <p className="text-sm leading-6 whitespace-pre-wrap">
-                          {message.content}
-                        </p>
+                        {message.role === "assistant" ? (
+                          <SpokenText
+                            text={message.content}
+                            isSpeaking={isSpeaking && speakingMessageIndex === index}
+                            currentCharIndex={currentCharIndex}
+                            className="text-sm leading-6"
+                          />
+                        ) : (
+                          <p className="text-sm leading-6 whitespace-pre-wrap">
+                            {message.content}
+                          </p>
+                        )}
                         {message.role === "assistant" &&
                           message.citations?.length ? (
                             <div className="mt-3 flex flex-wrap gap-2">

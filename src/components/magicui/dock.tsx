@@ -12,6 +12,7 @@ import {
 import React, { PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
+import { playHoverSound } from "@/lib/audio";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -127,6 +128,7 @@ const DockIcon = ({
   return (
     <motion.div
       ref={ref}
+      onMouseEnter={playHoverSound}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
