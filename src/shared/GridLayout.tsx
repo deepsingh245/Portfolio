@@ -12,7 +12,7 @@ const GridLayout = ({ features }: GridLayoutProps) => {
 
   return (
     <>
-      <BentoGrid className="lg:grid-rows-2">
+      <BentoGrid>
         {features.map((feature) => (
           <BentoCard
             key={feature.name}

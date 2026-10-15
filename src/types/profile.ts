@@ -39,10 +39,10 @@ export interface ProfileProject {
   name: string;
   description: string;
   longDescription: string;
-  timeline: string;
+  timeline: string | null;
   techStack: string[];
-  liveHref?: string;
-  sourceHref?: string;
+  liveHref?: string | null;
+  sourceHref?: string | null;
   downloads?: {
     android?: string;
     ios?: string;
@@ -50,8 +50,23 @@ export interface ProfileProject {
     mac?: string;
     linux?: string;
   };
-  visual: "billety" | "client-trace" | "css-grid-playground" | "linkedloom" | "attendify";
-  icon: "file-text" | "npm" | "globe" | "scan-face";
+  visual:
+    | "billety"
+    | "client-trace"
+    | "css-grid-playground"
+    | "linkedloom"
+    | "attendify"
+    | "monwin"
+    | "hukumnama"
+    | "kryvex";
+  icon:
+    | "file-text"
+    | "npm"
+    | "globe"
+    | "scan-face"
+    | "monitor"
+    | "book-open"
+    | "shield-check";
   featuredFor: string[];
 }
 

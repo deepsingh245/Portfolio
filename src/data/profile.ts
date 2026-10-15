@@ -194,24 +194,7 @@ export const portfolioKnowledge: ChatbotKnowledge = {
         "Vanilla web engineering",
       ],
     },
-    {
-      name: "LinkedLoom",
-      description:
-        "LinkedLoom is a modern SaaS application that helps founders and creators scale their LinkedIn presence with AI-assisted content and scheduling.",
-      longDescription:
-        "LinkedLoom combines AI-powered content generation with scheduling and analytics in a polished SaaS dashboard aimed at creators and founders.",
-      timeline: "Jan 2026",
-      techStack: ["React", "Next.js", "TypeScript", "Tailwind", "Firebase"],
-      liveHref: "https://linkedloom-web--linkedloom.us-east4.hosted.app/",
-      sourceHref: "https://github.com/deepsingh245/LinkedLoom",
-      visual: "linkedloom",
-      icon: "globe",
-      featuredFor: [
-        "SaaS dashboard design",
-        "TypeScript and Next.js delivery",
-        "AI-assisted product thinking",
-      ],
-    },
+
     {
       name: "Attendify: Smart Attendance System",
       description:
@@ -230,6 +213,106 @@ export const portfolioKnowledge: ChatbotKnowledge = {
         "Full-stack student tooling",
       ],
     },
+    {
+       name: "MonWin",
+       description:
+         "MonWin is a lightweight Windows desktop utility that brings real-time CPU, RAM, and GPU monitoring directly to the Windows taskbar.",
+       longDescription:
+         "MonWin provides an always-visible system performance overlay for Windows 10 and 11, allowing users to monitor essential hardware metrics without opening Task Manager. Built with a focus on low resource consumption, native desktop integration, and a clean, unobtrusive interface. Distributed as a standalone Windows executable.",
+       timeline: "Sep 2026",
+       techStack: ["C#", ".NET", "WPF", "Windows APIs"],
+       liveHref: null,
+       sourceHref: "https://github.com/deepsingh245/MonWin",
+       downloads: {
+         windows:
+           "https://github.com/deepsingh245/MonWin/releases/download/v1.0.0/SystemMonitor.exe",
+       },
+       visual: "monwin",
+       icon: "monitor",
+       featuredFor: [
+         "Windows desktop application development",
+         "Real-time hardware performance monitoring",
+         "Native system integration and lightweight UI",
+         "Standalone executable distribution",
+       ],
+     },
+     {
+       name: "Hukumnama",
+       description:
+         "Hukumnama AI is an AI-powered Sikh scripture app that delivers the daily Hukumnama with translations, voice playback, quotes, and social sharing templates — powered by Gemini 2.5.",
+       longDescription:
+         "Hukumnama AI is a spiritual productivity app built with modern web technologies and Gemini 2.5. It delivers the daily Hukumnama (Sikh daily scripture) with multi-language support (Gurmukhi, Punjabi, English), voice narration, AI-generated summaries, sharable quote cards, status images, and video content. Designed for both personal reflection and social sharing workflows.",
+       timeline: null,
+       techStack: ["React", "Firebase", "Gemini AI", "TypeScript"],
+       liveHref: "https://hukumnama-ai.web.app/",
+       sourceHref: null,
+       visual: "hukumnama",
+       icon: "book-open",
+       featuredFor: [
+         "Independent product development",
+         "AI-powered spiritual application",
+         "Multi-language and voice interface design",
+       ],
+     },
+     {
+       name: "Kryvex",
+       description:
+         "Kryvex is a privacy-focused digital vault designed to securely organize passwords, credentials, documents, and sensitive personal information across devices.",
+       longDescription:
+         "Kryvex is a cross-platform personal vault designed to replace scattered notes and insecure credential storage with a unified experience. Its architecture centers on Firebase-backed authentication and synchronization, offline accessibility, and responsive web and mobile interfaces. The product roadmap includes protected text, images, PDF documents, and future secure sharing capabilities, with a strong emphasis on privacy and usability.",
+       timeline: "Sep 2026",
+       techStack: [
+         "React",
+         "TypeScript",
+         "Firebase",
+         "Firestore",
+         "PWA",
+       ],
+       liveHref: "https://kry-vex.netlify.app/welcome",
+       sourceHref: null,
+       visual: "kryvex",
+       icon: "shield-check",
+       featuredFor: [
+         "Privacy-focused application architecture",
+         "Cross-platform web and mobile experience",
+         "Offline-first storage and cloud synchronization",
+         "Secure credential and document management",
+       ],
+     },
+     {
+       name: "LinkedLoom",
+       description:
+         "LinkedLoom is an AI-powered social media management SaaS that helps creators and professionals generate, schedule, and publish content through automated workflows.",
+       longDescription:
+         "LinkedLoom combines AI-assisted post creation, image generation, OAuth-based account connections, and automated social publishing in a modern SaaS dashboard. Built using Next.js, TypeScript, and Firebase, it uses Cloud Functions, Firestore, Cloud Scheduler, and Pub/Sub to manage scheduled content and publishing workflows. LinkedIn publishing is implemented, with a product architecture designed for additional social platforms, content management, and analytics.",
+       timeline: "Jan 2026 – Present",
+       techStack: [
+         "React",
+         "Next.js",
+         "TypeScript",
+         "Tailwind CSS",
+         "Firebase",
+         "Firestore",
+         "Cloud Functions",
+         "Cloud Scheduler",
+         "Google Cloud Pub/Sub",
+         "Gemini API",
+         "OAuth 2.0",
+       ],
+       liveHref:
+         "https://linkedloom-web--linkedloom.us-east4.hosted.app/",
+       sourceHref:
+         "https://github.com/deepsingh245/LinkedLoom",
+       visual: "linkedloom",
+       icon: "globe",
+       featuredFor: [
+         "Production SaaS architecture and dashboard design",
+         "AI-assisted content and image generation",
+         "Automated publishing with serverless background jobs",
+         "OAuth integrations and secure API workflows",
+         "Full-stack TypeScript and Firebase development",
+       ],
+     },
   ],
   skillCategories: [
     {

@@ -3,8 +3,8 @@ import Home from "./Home";
 
 function App() {
   return (
-    <div className="cursor-none">
-      <SmoothCursor />
+    <div className="">
+      {/*<SmoothCursor />*/}
       <Home />
     </div>
   );
