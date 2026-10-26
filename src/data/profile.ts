@@ -134,126 +134,6 @@ export const portfolioKnowledge: ChatbotKnowledge = {
     },
   ],
   projects: [
-    {
-      name: "Billety",
-      description:
-        "Billety is a smart and easy-to-use billing software that helps businesses create invoices, track payments, and manage customers effortlessly across desktop and mobile.",
-      longDescription:
-        "Billety is a comprehensive billing solution designed for modern businesses. It streamlines invoicing, allows real-time payment tracking, and provides centralized customer management with cross-platform support.",
-      timeline: "Jan 2024 - Present",
-      techStack: ["React", "Electron", "Capacitor", "Firebase", "TypeScript"],
-      liveHref: "https://billety.netlify.app/",
-      sourceHref: "https://github.com/deepsingh245/billety",
-      downloads: {
-        windows:
-          "https://github.com/deepsingh245/billety/releases/download/v0.0.1/Billety.Setup.0.0.0.exe",
-        mac: "",
-        linux: "",
-        android: "",
-      },
-      visual: "billety",
-      icon: "file-text",
-      featuredFor: [
-        "Cross-platform product delivery",
-        "TypeScript application architecture",
-        "Business workflow tooling",
-      ],
-    },
-    {
-      name: "Client Trace - NPM",
-      description:
-        "NPM package for tracking client IP addresses and user agents.",
-      longDescription:
-        "Client Trace is a lightweight NPM package that helps developers track client IP addresses and user agent strings for analytics and security workflows in Node.js applications.",
-      timeline: "Dec 2024",
-      techStack: ["JavaScript", "Node.js", "NPM"],
-      liveHref: "https://npmjs.com/package/client-trace",
-      visual: "client-trace",
-      icon: "npm",
-      featuredFor: [
-        "Open-source packaging",
-        "Node.js utility development",
-        "Developer tooling",
-      ],
-    },
-    {
-      name: "CSSGrid Playground",
-      description:
-        "Interactive CSS Grid playground where users can build grids by clicking controls and see changes instantly.",
-      longDescription:
-        "A hands-on CSS Grid playground that lets users customize rows, columns, and gaps, preview the result immediately, and export clean CSS code.",
-      timeline: "Nov 2025",
-      techStack: ["HTML", "CSS", "JavaScript"],
-      liveHref: "https://css-grid-playround.netlify.app/",
-      sourceHref: "https://github.com/deepsingh245/css-grid-playground",
-      visual: "css-grid-playground",
-      icon: "globe",
-      featuredFor: [
-        "Frontend fundamentals",
-        "Interactive learning tools",
-        "Vanilla web engineering",
-      ],
-    },
-
-    {
-      name: "Attendify: Smart Attendance System",
-      description:
-        "A smart attendance system using face recognition to automatically identify students and mark attendance.",
-      longDescription:
-        "Attendify uses face recognition to automate classroom attendance and provides a dashboard for teachers to review reports and trends.",
-      timeline: "Sep 2023",
-      techStack: ["React", "Face Api", "Firebase", "NodeJS"],
-      liveHref: "https://atttendify.netlify.app",
-      sourceHref: "https://github.com/deepsingh245/attendify",
-      visual: "attendify",
-      icon: "scan-face",
-      featuredFor: [
-        "Applied AI features",
-        "Dashboard product design",
-        "Full-stack student tooling",
-      ],
-    },
-    {
-       name: "MonWin",
-       description:
-         "MonWin is a lightweight Windows desktop utility that brings real-time CPU, RAM, and GPU monitoring directly to the Windows taskbar.",
-       longDescription:
-         "MonWin provides an always-visible system performance overlay for Windows 10 and 11, allowing users to monitor essential hardware metrics without opening Task Manager. Built with a focus on low resource consumption, native desktop integration, and a clean, unobtrusive interface. Distributed as a standalone Windows executable.",
-       timeline: "Sep 2026",
-       techStack: ["C#", ".NET", "WPF", "Windows APIs"],
-       liveHref: null,
-       sourceHref: "https://github.com/deepsingh245/MonWin",
-       downloads: {
-         windows:
-           "https://github.com/deepsingh245/MonWin/releases/download/v1.0.0/SystemMonitor.exe",
-       },
-       visual: "monwin",
-       icon: "monitor",
-       featuredFor: [
-         "Windows desktop application development",
-         "Real-time hardware performance monitoring",
-         "Native system integration and lightweight UI",
-         "Standalone executable distribution",
-       ],
-     },
-     {
-       name: "Hukumnama",
-       description:
-         "Hukumnama AI is an AI-powered Sikh scripture app that delivers the daily Hukumnama with translations, voice playback, quotes, and social sharing templates — powered by Gemini 2.5.",
-       longDescription:
-         "Hukumnama AI is a spiritual productivity app built with modern web technologies and Gemini 2.5. It delivers the daily Hukumnama (Sikh daily scripture) with multi-language support (Gurmukhi, Punjabi, English), voice narration, AI-generated summaries, sharable quote cards, status images, and video content. Designed for both personal reflection and social sharing workflows.",
-       timeline: null,
-       techStack: ["React", "Firebase", "Gemini AI", "TypeScript"],
-       liveHref: "https://hukumnama-ai.web.app/",
-       sourceHref: null,
-       visual: "hukumnama",
-       icon: "book-open",
-       featuredFor: [
-         "Independent product development",
-         "AI-powered spiritual application",
-         "Multi-language and voice interface design",
-       ],
-     },
      {
        name: "Kryvex",
        description:
@@ -278,8 +158,7 @@ export const portfolioKnowledge: ChatbotKnowledge = {
          "Offline-first storage and cloud synchronization",
          "Secure credential and document management",
        ],
-     },
-     {
+     },     {
        name: "LinkedLoom",
        description:
          "LinkedLoom is an AI-powered social media management SaaS that helps creators and professionals generate, schedule, and publish content through automated workflows.",
@@ -313,7 +192,121 @@ export const portfolioKnowledge: ChatbotKnowledge = {
          "Full-stack TypeScript and Firebase development",
        ],
      },
-  ],
+    {
+       name: "MonWin",
+       description:
+         "MonWin is a lightweight Windows desktop utility that brings real-time CPU, RAM, and GPU monitoring directly to the Windows taskbar.",
+       longDescription:
+         "MonWin provides an always-visible system performance overlay for Windows 10 and 11, allowing users to monitor essential hardware metrics without opening Task Manager. Built with a focus on low resource consumption, native desktop integration, and a clean, unobtrusive interface. Distributed as a standalone Windows executable.",
+       timeline: "Sep 2026",
+       techStack: ["C#", ".NET", "WPF", "Windows APIs"],
+       liveHref: null,
+       sourceHref: "https://github.com/deepsingh245/MonWin",
+       downloads: {
+         windows:
+           "https://github.com/deepsingh245/MonWin/releases/download/v1.0.0/SystemMonitor.exe",
+       },
+       visual: "monwin",
+       icon: "monitor",
+       featuredFor: [
+         "Windows desktop application development",
+         "Real-time hardware performance monitoring",
+         "Native system integration and lightweight UI",
+         "Standalone executable distribution",
+       ],
+     },    {
+      name: "Billety",
+      description:
+        "Billety is a smart and easy-to-use billing software that helps businesses create invoices, track payments, and manage customers effortlessly across desktop and mobile.",
+      longDescription:
+        "Billety is a comprehensive billing solution designed for modern businesses. It streamlines invoicing, allows real-time payment tracking, and provides centralized customer management with cross-platform support.",
+      timeline: "Jan 2024 - Present",
+      techStack: ["React", "Electron", "Capacitor", "Firebase", "TypeScript"],
+      liveHref: "https://billety.netlify.app/",
+      sourceHref: "https://github.com/deepsingh245/billety",
+      downloads: {
+        windows:
+          "https://github.com/deepsingh245/billety/releases/download/v0.0.1/Billety.Setup.0.0.0.exe",
+        mac: "",
+        linux: "",
+        android: "",
+      },
+      visual: "billety",
+      icon: "file-text",
+      featuredFor: [
+        "Cross-platform product delivery",
+        "TypeScript application architecture",
+        "Business workflow tooling",
+      ],
+    },    {
+      name: "Client Trace - NPM",
+      description:
+        "NPM package for tracking client IP addresses and user agents.",
+      longDescription:
+        "Client Trace is a lightweight NPM package that helps developers track client IP addresses and user agent strings for analytics and security workflows in Node.js applications.",
+      timeline: "Dec 2024",
+      techStack: ["JavaScript", "Node.js", "NPM"],
+      liveHref: "https://npmjs.com/package/client-trace",
+      visual: "client-trace",
+      icon: "npm",
+      featuredFor: [
+        "Open-source packaging",
+        "Node.js utility development",
+        "Developer tooling",
+      ],
+    },    {
+      name: "CSSGrid Playground",
+      description:
+        "Interactive CSS Grid playground where users can build grids by clicking controls and see changes instantly.",
+      longDescription:
+        "A hands-on CSS Grid playground that lets users customize rows, columns, and gaps, preview the result immediately, and export clean CSS code.",
+      timeline: "Nov 2025",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      liveHref: "https://css-grid-playround.netlify.app/",
+      sourceHref: "https://github.com/deepsingh245/css-grid-playground",
+      visual: "css-grid-playground",
+      icon: "globe",
+      featuredFor: [
+        "Frontend fundamentals",
+        "Interactive learning tools",
+        "Vanilla web engineering",
+      ],
+    },
+    {
+      name: "Attendify: Smart Attendance System",
+      description:
+        "A smart attendance system using face recognition to automatically identify students and mark attendance.",
+      longDescription:
+        "Attendify uses face recognition to automate classroom attendance and provides a dashboard for teachers to review reports and trends.",
+      timeline: "Sep 2023",
+      techStack: ["React", "Face Api", "Firebase", "NodeJS"],
+      liveHref: "https://atttendify.netlify.app",
+      sourceHref: "https://github.com/deepsingh245/attendify",
+      visual: "attendify",
+      icon: "scan-face",
+      featuredFor: [
+        "Applied AI features",
+        "Dashboard product design",
+        "Full-stack student tooling",
+      ],
+    },     {
+       name: "Hukumnama",
+       description:
+         "Hukumnama AI is an AI-powered Sikh scripture app that delivers the daily Hukumnama with translations, voice playback, quotes, and social sharing templates — powered by Gemini 2.5.",
+       longDescription:
+         "Hukumnama AI is a spiritual productivity app built with modern web technologies and Gemini 2.5. It delivers the daily Hukumnama (Sikh daily scripture) with multi-language support (Gurmukhi, Punjabi, English), voice narration, AI-generated summaries, sharable quote cards, status images, and video content. Designed for both personal reflection and social sharing workflows.",
+       timeline: null,
+       techStack: ["React", "Firebase", "Gemini AI", "TypeScript"],
+       liveHref: "https://hukumnama-ai.web.app/",
+       sourceHref: null,
+       visual: "hukumnama",
+       icon: "book-open",
+       featuredFor: [
+         "Independent product development",
+         "AI-powered spiritual application",
+         "Multi-language and voice interface design",
+       ],
+     },  ],
   skillCategories: [
     {
       title: "LANGUAGES",

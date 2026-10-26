@@ -24,6 +24,7 @@ export interface ExperienceProject {
   icon: "shield" | "users" | "zap";
   description: string[];
   tech: string[];
+  images?: string[];
 }
 
 export interface ExperienceEntry {

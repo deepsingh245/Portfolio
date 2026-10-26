@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Modal } from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
+import { ImageCarousel } from "@/components/ui/image-carousel";
 
 const experiences = portfolioKnowledge.experience;
 
@@ -99,11 +100,11 @@ const Experience = () => {
       <Modal
         isOpen={!!selectedExperience}
         onClose={() => setSelectedExperience(null)}
-        className="p-0 bg-background border-border max-w-6xl shadow-2xl"
+        className="p-0 bg-background border-border max-w-6xl shadow-2xl overflow-hidden"
       >
         {selectedExperience && (
-          <div className="flex flex-col bg-background dark:bg-[#030303]">
-            <div className="p-8 border-b border-border flex items-center justify-between">
+          <div className="flex h-[85vh] flex-col bg-background dark:bg-[#030303]">
+            <div className="p-8 border-b border-border flex shrink-0 items-center justify-between">
               <div>
                 <h2 className="text-xs font-black tracking-[0.3em] text-primary uppercase mb-2">
                   Selected Projects
@@ -114,7 +115,7 @@ const Experience = () => {
               </div>
             </div>
 
-            <div className="p-8 overflow-x-auto custom-scrollbar flex gap-6 pb-20 md:pb-12">
+            <div className="p-8 flex-1 min-h-0 overflow-x-auto overflow-y-hidden custom-scrollbar flex gap-6">
               {selectedExperience.projects?.map((project, pIdx) => {
                 const ProjectIcon = projectIcons[project.icon];
 
@@ -124,26 +125,29 @@ const Experience = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: pIdx * 0.1 }}
-                    className="min-w-[320px] md:min-w-[400px] bg-card/50 dark:bg-neutral-900/40 border border-border rounded-3xl p-8 flex flex-col justify-between hover:border-primary/30 transition-colors group/p"
+                    className="min-w-[320px] md:min-w-[400px] h-full min-h-0 bg-card/50 dark:bg-neutral-900/40 border border-border rounded-3xl p-8 flex flex-col hover:border-primary/30 transition-colors group/p"
                   >
-                    <div>
-                      <div className="flex items-center justify-between mb-8">
-                        <div className="h-12 w-12 rounded-2xl bg-secondary border border-border flex items-center justify-center group-hover/p:border-primary/50 transition-colors">
-                          <ProjectIcon className="w-6 h-6 text-foreground group-hover/p:text-primary transition-colors" />
+                    <div className="flex flex-1 min-h-0 flex-col">
+                      <div className="flex shrink-0 items-center gap-3 mb-4">
+                        <div className="h-10 w-10 shrink-0 rounded-xl bg-secondary border border-border flex items-center justify-center group-hover/p:border-primary/50 transition-colors">
+                          <ProjectIcon className="w-5 h-5 text-foreground group-hover/p:text-primary transition-colors" />
                         </div>
-                        <span className="text-[10px] font-bold tracking-widest text-muted-foreground border border-border px-3 py-1 rounded-full uppercase">
+                        <h3 className="text-xl font-bold leading-tight text-foreground tracking-tight">
+                          {project.title}
+                        </h3>
+                      </div>
+
+                      <div className="relative mb-5 shrink-0">
+                        <ImageCarousel
+                          images={project.images}
+                          alt={project.title}
+                        />
+                        <span className="pointer-events-none absolute left-2 top-2 z-10 text-[9px] font-bold tracking-widest text-muted-foreground border border-border bg-background/80 backdrop-blur px-2.5 py-0.5 rounded-full uppercase">
                           {project.tag}
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2 mb-6 group-hover/p:translate-x-1 transition-transform">
-                        <h3 className="text-2xl font-bold text-foreground tracking-tight">
-                          {project.title}
-                        </h3>
-                        <ChevronRightIcon className="w-5 h-5 text-muted-foreground group-hover/p:text-primary transition-colors" />
-                      </div>
-
-                      <ul className="space-y-4 mb-8">
+                      <ul className="space-y-4 mb-4 flex-1 min-h-0 overflow-y-auto custom-scrollbar pr-2">
                         {project.description.map((item, iIdx) => (
                           <li
                             key={iIdx}
@@ -156,7 +160,7 @@ const Experience = () => {
                       </ul>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-border">
+                    <div className="flex shrink-0 flex-wrap gap-2 pt-4 border-t border-border">
                       {project.tech.map((tech) => (
                         <Badge
                           key={tech}

@@ -41,7 +41,7 @@ const projectClassMap: Record<ProfileProject["visual"], string> = {
   "css-grid-playground": "lg:col-span-1",
   attendify: "lg:col-span-1",
   monwin: "lg:col-span-1",
-  hukumnama: "lg:col-span-1",
+  hukumnama: "md:col-span-2",
   kryvex: "lg:col-span-1",
   linkedloom: "md:col-span-2",
 };

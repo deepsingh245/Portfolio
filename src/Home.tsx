@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <Meteors className="-z-10" />
-      <AnimatedThemeToggler className="fixed top-0 right-0 m-4 z-50" />
+      {/* <AnimatedThemeToggler className="fixed top-0 right-0 m-4 z-50" /> */}
       <div className="border-x-2 md:w-[80rem] m-auto min-h-full  pb-20">
         <Header />
         <About />
