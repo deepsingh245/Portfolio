@@ -17,6 +17,12 @@ import {
 import { Modal } from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
 import { ImageCarousel } from "@/components/ui/image-carousel";
+import coreHrmsDashboard from "@/assets/images/core-hrms-dashboard.png";
+import coreHrmsCandidateLifecycle from "@/assets/images/core-hrms-candidate-lifecycle.png";
+import coreHrmsAiEvaluation from "@/assets/images/core-hrms-ai-evaluation.png";
+import ldgersLanding from "@/assets/images/ldgers-landing.png";
+import onTheSpotHero from "@/assets/images/onthespot-hero.png";
+import onTheSpotStackPlan from "@/assets/images/onthespot-stack-plan.png";
 
 const experiences = portfolioKnowledge.experience;
 
@@ -24,6 +30,17 @@ const projectIcons: Record<ExperienceProject["icon"], typeof ShieldCheckIcon> = 
   shield: ShieldCheckIcon,
   users: UsersIcon,
   zap: ZapIcon,
+};
+
+// Kept here rather than in profile.ts, which the Netlify chat function also imports.
+const projectImages: Record<string, string[]> = {
+  "LDGERS Platform": [ldgersLanding],
+  "Core HRMS": [
+    coreHrmsDashboard,
+    coreHrmsCandidateLifecycle,
+    coreHrmsAiEvaluation,
+  ],
+  "OnTheSpotTradeFlex - On The Spot": [onTheSpotHero, onTheSpotStackPlan],
 };
 
 const Experience = () => {
@@ -104,18 +121,18 @@ const Experience = () => {
       >
         {selectedExperience && (
           <div className="flex h-[85vh] flex-col bg-background dark:bg-[#030303]">
-            <div className="p-8 border-b border-border flex shrink-0 items-center justify-between">
+            <div className="px-8 py-4 pr-16 border-b border-border flex shrink-0 items-center justify-between">
               <div>
-                <h2 className="text-xs font-black tracking-[0.3em] text-primary uppercase mb-2">
+                <h2 className="text-[10px] font-black tracking-[0.3em] text-primary uppercase mb-1">
                   Selected Projects
                 </h2>
-                <h3 className="text-3xl font-bold inter tracking-tighter text-foreground">
+                <h3 className="text-xl font-bold inter tracking-tight text-foreground">
                   {selectedExperience.company}
                 </h3>
               </div>
             </div>
 
-            <div className="p-8 flex-1 min-h-0 overflow-x-auto overflow-y-hidden custom-scrollbar flex gap-6">
+            <div className="px-8 py-6 flex-1 min-h-0 overflow-x-auto overflow-y-hidden custom-scrollbar flex gap-6">
               {selectedExperience.projects?.map((project, pIdx) => {
                 const ProjectIcon = projectIcons[project.icon];
 
@@ -139,7 +156,7 @@ const Experience = () => {
 
                       <div className="relative mb-5 shrink-0">
                         <ImageCarousel
-                          images={project.images}
+                          images={project.images ?? projectImages[project.title]}
                           alt={project.title}
                         />
                         <span className="pointer-events-none absolute left-2 top-2 z-10 text-[9px] font-bold tracking-widest text-muted-foreground border border-border bg-background/80 backdrop-blur px-2.5 py-0.5 rounded-full uppercase">

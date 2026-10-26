@@ -74,30 +74,30 @@ export const portfolioKnowledge: ChatbotKnowledge = {
       skills: ["React", "Angular", "Next.js", "Node.js", "TypeScript"],
       projects: [
         {
-          title: "LDGERS Platform",
-          tag: "SECURITY FIRST",
-          icon: "shield",
-          description: [
-            "Engineered the LDGERS platform with SSL security and VAPT-compliant architecture, mitigating critical vulnerabilities and strengthening system integrity.",
-            "Developed React Native mobile applications with optimized performance and consistent cross-platform behavior.",
-            "Built end-to-end financial modules including reporting, account management, and invoice systems to automate business workflows.",
-            "Enhanced platform reliability through secure API design, authentication, and data protection practices.",
-          ],
-          tech: ["REACT NATIVE", "SSL", "VAPT", "ENCRYPTION"],
-        },
-        {
           title: "Core HRMS",
-          tag: "ENTERPRISE SCALE",
+          tag: "ENTERPRISE SAAS",
           icon: "users",
           description: [
-            "Architected an end-to-end HRMS system managing hiring pipelines, interview workflows, offer generation, onboarding, and employee lifecycle operations.",
-            "Engineered RBAC-driven dashboards with granular access for HR, Admin, and Managers, improving operational visibility and decision-making.",
-            "Implemented geo-based attendance tracking and scalable multi-tenant architecture across organizations and locations.",
-            "Led cross-functional team execution, delivering on schedule while integrating AI modules and configurable master data systems.",
-            "Designed and implemented a multinational compliance structure aligned with India's DPDP Act, EU GDPR, and US CCPA.",
+            "Engineered an enterprise HRMS SaaS platform covering recruitment, interview management, offer generation, onboarding, employee lifecycle, attendance, payroll, and performance management.",
+            "Designed scalable, multi-tenant architecture with configurable modules, organization-level data isolation, granular RBAC, and dynamic dashboards.",
+            "Integrated independently deployed services, including LMS, through REST APIs, and developed automated cron services for scheduled background operations.",
+            "Built AI-enabled capabilities, dynamic reporting engines, reusable data-driven components, and configurable master-data systems to streamline HR operations.",
+            "Implemented complex business workflows including multi-level approvals, employee transfers, resignation, clearance, and organizational hierarchy management.",
+            "Developed privacy-aware workflows aligned with India's DPDP Act, EU GDPR, and US CCPA, incorporating permission-based access and audit-friendly data handling.",
+            "Collaborated with cross-functional teams using Agile development practices to deliver features iteratively and maintain consistent engineering standards."
           ],
-          tech: ["ARCHITECTURE", "RBAC", "NODE.JS", "COMPLIANCE"],
+          tech: [
+            "SAAS ARCHITECTURE",
+            "MICROSERVICES",
+            "AI INTEGRATION",
+            "NEXT.JS",
+            "NODE.JS",
+            "MONGODB",
+            "RBAC",
+            "REST APIS"
+          ],
         },
+
         {
           title: "OnTheSpotTradeFlex - On The Spot",
           tag: "REAL-TIME OPS",
@@ -113,6 +113,18 @@ export const portfolioKnowledge: ChatbotKnowledge = {
             "Implemented end-to-end deployment for TradeFlex using GCP services and integrated Firebase Analytics plus Crashlytics to support Play Store release monitoring.",
           ],
           tech: ["IONIC", "ANGULAR", "FIREBASE", "GCP", "TYPESCRIPT", "GEMINI AI"],
+        },
+        {
+          title: "LDGERS Platform",
+          tag: "SECURITY FIRST",
+          icon: "shield",
+          description: [
+            "Engineered the LDGERS platform with SSL security and VAPT-compliant architecture, mitigating critical vulnerabilities and strengthening system integrity.",
+            "Developed React Native mobile applications with optimized performance and consistent cross-platform behavior.",
+            "Built end-to-end financial modules including reporting, account management, and invoice systems to automate business workflows.",
+            "Enhanced platform reliability through secure API design, authentication, and data protection practices.",
+          ],
+          tech: ["REACT NATIVE", "SSL", "VAPT", "ENCRYPTION"],
         },
       ],
     },
@@ -134,87 +146,87 @@ export const portfolioKnowledge: ChatbotKnowledge = {
     },
   ],
   projects: [
-     {
-       name: "Kryvex",
-       description:
-         "Kryvex is a privacy-focused digital vault designed to securely organize passwords, credentials, documents, and sensitive personal information across devices.",
-       longDescription:
-         "Kryvex is a cross-platform personal vault designed to replace scattered notes and insecure credential storage with a unified experience. Its architecture centers on Firebase-backed authentication and synchronization, offline accessibility, and responsive web and mobile interfaces. The product roadmap includes protected text, images, PDF documents, and future secure sharing capabilities, with a strong emphasis on privacy and usability.",
-       timeline: "Sep 2026",
-       techStack: [
-         "React",
-         "TypeScript",
-         "Firebase",
-         "Firestore",
-         "PWA",
-       ],
-       liveHref: "https://kry-vex.netlify.app/welcome",
-       sourceHref: null,
-       visual: "kryvex",
-       icon: "shield-check",
-       featuredFor: [
-         "Privacy-focused application architecture",
-         "Cross-platform web and mobile experience",
-         "Offline-first storage and cloud synchronization",
-         "Secure credential and document management",
-       ],
-     },     {
-       name: "LinkedLoom",
-       description:
-         "LinkedLoom is an AI-powered social media management SaaS that helps creators and professionals generate, schedule, and publish content through automated workflows.",
-       longDescription:
-         "LinkedLoom combines AI-assisted post creation, image generation, OAuth-based account connections, and automated social publishing in a modern SaaS dashboard. Built using Next.js, TypeScript, and Firebase, it uses Cloud Functions, Firestore, Cloud Scheduler, and Pub/Sub to manage scheduled content and publishing workflows. LinkedIn publishing is implemented, with a product architecture designed for additional social platforms, content management, and analytics.",
-       timeline: "Jan 2026 – Present",
-       techStack: [
-         "React",
-         "Next.js",
-         "TypeScript",
-         "Tailwind CSS",
-         "Firebase",
-         "Firestore",
-         "Cloud Functions",
-         "Cloud Scheduler",
-         "Google Cloud Pub/Sub",
-         "Gemini API",
-         "OAuth 2.0",
-       ],
-       liveHref:
-         "https://linkedloom-web--linkedloom.us-east4.hosted.app/",
-       sourceHref:
-         "https://github.com/deepsingh245/LinkedLoom",
-       visual: "linkedloom",
-       icon: "globe",
-       featuredFor: [
-         "Production SaaS architecture and dashboard design",
-         "AI-assisted content and image generation",
-         "Automated publishing with serverless background jobs",
-         "OAuth integrations and secure API workflows",
-         "Full-stack TypeScript and Firebase development",
-       ],
-     },
     {
-       name: "MonWin",
-       description:
-         "MonWin is a lightweight Windows desktop utility that brings real-time CPU, RAM, and GPU monitoring directly to the Windows taskbar.",
-       longDescription:
-         "MonWin provides an always-visible system performance overlay for Windows 10 and 11, allowing users to monitor essential hardware metrics without opening Task Manager. Built with a focus on low resource consumption, native desktop integration, and a clean, unobtrusive interface. Distributed as a standalone Windows executable.",
-       timeline: "Sep 2026",
-       techStack: ["C#", ".NET", "WPF", "Windows APIs"],
-       liveHref: null,
-       sourceHref: "https://github.com/deepsingh245/MonWin",
-       downloads: {
-         windows:
-           "https://github.com/deepsingh245/MonWin/releases/download/v1.0.0/SystemMonitor.exe",
-       },
-       visual: "monwin",
-       icon: "monitor",
-       featuredFor: [
-         "Windows desktop application development",
-         "Real-time hardware performance monitoring",
-         "Native system integration and lightweight UI",
-         "Standalone executable distribution",
-       ],
-     },    {
+      name: "Kryvex",
+      description:
+        "Kryvex is a privacy-focused digital vault designed to securely organize passwords, credentials, documents, and sensitive personal information across devices.",
+      longDescription:
+        "Kryvex is a cross-platform personal vault designed to replace scattered notes and insecure credential storage with a unified experience. Its architecture centers on Firebase-backed authentication and synchronization, offline accessibility, and responsive web and mobile interfaces. The product roadmap includes protected text, images, PDF documents, and future secure sharing capabilities, with a strong emphasis on privacy and usability.",
+      timeline: "Sep 2026",
+      techStack: [
+        "React",
+        "TypeScript",
+        "Firebase",
+        "Firestore",
+        "PWA",
+      ],
+      liveHref: "https://kry-vex.netlify.app/welcome",
+      sourceHref: "https://github.com/deepsingh245/Kryvex",
+      visual: "kryvex",
+      icon: "shield-check",
+      featuredFor: [
+        "Privacy-focused application architecture",
+        "Cross-platform web and mobile experience",
+        "Offline-first storage and cloud synchronization",
+        "Secure credential and document management",
+      ],
+    }, {
+      name: "LinkedLoom",
+      description:
+        "LinkedLoom is an AI-powered social media management SaaS that helps creators and professionals generate, schedule, and publish content through automated workflows.",
+      longDescription:
+        "LinkedLoom combines AI-assisted post creation, image generation, OAuth-based account connections, and automated social publishing in a modern SaaS dashboard. Built using Next.js, TypeScript, and Firebase, it uses Cloud Functions, Firestore, Cloud Scheduler, and Pub/Sub to manage scheduled content and publishing workflows. LinkedIn publishing is implemented, with a product architecture designed for additional social platforms, content management, and analytics.",
+      timeline: "Jan 2026 – Present",
+      techStack: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Firebase",
+        "Firestore",
+        "Cloud Functions",
+        "Cloud Scheduler",
+        "Google Cloud Pub/Sub",
+        "Gemini API",
+        "OAuth 2.0",
+      ],
+      liveHref:
+        "https://linkedloom-web--linkedloom.us-east4.hosted.app/",
+      sourceHref:
+        "https://github.com/deepsingh245/LinkedLoom",
+      visual: "linkedloom",
+      icon: "globe",
+      featuredFor: [
+        "Production SaaS architecture and dashboard design",
+        "AI-assisted content and image generation",
+        "Automated publishing with serverless background jobs",
+        "OAuth integrations and secure API workflows",
+        "Full-stack TypeScript and Firebase development",
+      ],
+    },
+    {
+      name: "MonWin",
+      description:
+        "MonWin is a lightweight Windows desktop utility that brings real-time CPU, RAM, and GPU monitoring directly to the Windows taskbar.",
+      longDescription:
+        "MonWin provides an always-visible system performance overlay for Windows 10 and 11, allowing users to monitor essential hardware metrics without opening Task Manager. Built with a focus on low resource consumption, native desktop integration, and a clean, unobtrusive interface. Distributed as a standalone Windows executable.",
+      timeline: "Sep 2026",
+      techStack: ["C#", ".NET", "WPF", "Windows APIs"],
+      liveHref: null,
+      sourceHref: "https://github.com/deepsingh245/MonWin",
+      downloads: {
+        windows:
+          "https://github.com/deepsingh245/MonWin/releases/download/v1.0.0/SystemMonitor.exe",
+      },
+      visual: "monwin",
+      icon: "monitor",
+      featuredFor: [
+        "Windows desktop application development",
+        "Real-time hardware performance monitoring",
+        "Native system integration and lightweight UI",
+        "Standalone executable distribution",
+      ],
+    }, {
       name: "Billety",
       description:
         "Billety is a smart and easy-to-use billing software that helps businesses create invoices, track payments, and manage customers effortlessly across desktop and mobile.",
@@ -238,7 +250,7 @@ export const portfolioKnowledge: ChatbotKnowledge = {
         "TypeScript application architecture",
         "Business workflow tooling",
       ],
-    },    {
+    }, {
       name: "Client Trace - NPM",
       description:
         "NPM package for tracking client IP addresses and user agents.",
@@ -247,6 +259,7 @@ export const portfolioKnowledge: ChatbotKnowledge = {
       timeline: "Dec 2024",
       techStack: ["JavaScript", "Node.js", "NPM"],
       liveHref: "https://npmjs.com/package/client-trace",
+      sourceHref: "https://github.com/deepsingh245/client-trace",
       visual: "client-trace",
       icon: "npm",
       featuredFor: [
@@ -254,7 +267,7 @@ export const portfolioKnowledge: ChatbotKnowledge = {
         "Node.js utility development",
         "Developer tooling",
       ],
-    },    {
+    }, {
       name: "CSSGrid Playground",
       description:
         "Interactive CSS Grid playground where users can build grids by clicking controls and see changes instantly.",
@@ -289,24 +302,24 @@ export const portfolioKnowledge: ChatbotKnowledge = {
         "Dashboard product design",
         "Full-stack student tooling",
       ],
-    },     {
-       name: "Hukumnama",
-       description:
-         "Hukumnama AI is an AI-powered Sikh scripture app that delivers the daily Hukumnama with translations, voice playback, quotes, and social sharing templates — powered by Gemini 2.5.",
-       longDescription:
-         "Hukumnama AI is a spiritual productivity app built with modern web technologies and Gemini 2.5. It delivers the daily Hukumnama (Sikh daily scripture) with multi-language support (Gurmukhi, Punjabi, English), voice narration, AI-generated summaries, sharable quote cards, status images, and video content. Designed for both personal reflection and social sharing workflows.",
-       timeline: null,
-       techStack: ["React", "Firebase", "Gemini AI", "TypeScript"],
-       liveHref: "https://hukumnama-ai.web.app/",
-       sourceHref: null,
-       visual: "hukumnama",
-       icon: "book-open",
-       featuredFor: [
-         "Independent product development",
-         "AI-powered spiritual application",
-         "Multi-language and voice interface design",
-       ],
-     },  ],
+    }, {
+      name: "Hukumnama",
+      description:
+        "Hukumnama AI is an AI-powered Sikh scripture app that delivers the daily Hukumnama with translations, voice playback, quotes, and social sharing templates — powered by Gemini 2.5.",
+      longDescription:
+        "Hukumnama AI is a spiritual productivity app built with modern web technologies and Gemini 2.5. It delivers the daily Hukumnama (Sikh daily scripture) with multi-language support (Gurmukhi, Punjabi, English), voice narration, AI-generated summaries, sharable quote cards, status images, and video content. Designed for both personal reflection and social sharing workflows.",
+      timeline: null,
+      techStack: ["React", "Firebase", "Gemini AI", "TypeScript"],
+      liveHref: "https://hukumnama-ai.web.app/",
+      sourceHref: "https://github.com/deepsingh245/gurmat-vision",
+      visual: "hukumnama",
+      icon: "book-open",
+      featuredFor: [
+        "Independent product development",
+        "AI-powered spiritual application",
+        "Multi-language and voice interface design",
+      ],
+    },],
   skillCategories: [
     {
       title: "LANGUAGES",
